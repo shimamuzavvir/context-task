@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { myContext } from './App';
 import './style/card.css';
 import { Carousel } from 'react-bootstrap'; // Import Carousel from react-bootstrap
+import { BsStarFill } from 'react-icons/bs';
+import { BiPlus, BiMinus } from 'react-icons/bi';
+
 
 const CardComp = () => {
     const [data, setData] = useContext(myContext);
@@ -48,7 +51,7 @@ const CardComp = () => {
                                             {/* Mapping through item images */}
                                             {item.images.map((image, i) => (
                                                 <Carousel.Item key={i}>
-                                                    <img src={image} className="d-block w-100" alt={`Slide ${i}`} />
+                                                    <img src={image} className="d-block w-100" alt={`Slide ${i}`} id='carousel-img'/>
                                                 </Carousel.Item>
                                             ))}
                                         </Carousel>
@@ -71,18 +74,18 @@ const CardComp = () => {
                                         <div className="d-flex justify-content-between ">
                                             <p className="card-text"> <b>Rating: {item.rating}</b></p>
                                             <div className="d-flex align-items-center">
-                                                <button className="mx-2 quantity-btn p-2" onClick={() => HandleIncrease(item.id, item.quantity || 1)}>+</button>
+                                                <button className="mx-2 quantity-btn p-2" onClick={() => HandleIncrease(item.id, item.quantity || 1)}><BiPlus /></button>
                                                 <h6 className="mx-2">{item.quantity}</h6>
-                                                <button className="mx-2 quantity-btn p-2" onClick={() => HandleDecrease(item.id, item.quantity || 1)}>-</button>
+                                                <button className="mx-2 quantity-btn p-2" onClick={() => HandleDecrease(item.id, item.quantity || 1)}><BiMinus /></button>
                                             </div>
                                         </div>
                                         {/* Star rating */}
                                         <div className="text-warning mb-2 small">
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
+                                        <BsStarFill />
+                                                <BsStarFill />
+                                                <BsStarFill />
+                                                <BsStarFill />
+                                                <BsStarFill />
                                         </div>
                                         {/* Last updated time */}
                                         <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>

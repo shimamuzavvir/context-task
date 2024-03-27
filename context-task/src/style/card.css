@@ -1,6 +1,6 @@
 /* Style for card component */
 #card-w {
-    border: 1px solid #eaeaea;
+    border: 1px solid #4f4b4b;
     border-radius: 10px;
   }
   
@@ -37,4 +37,4 @@
   .btn-danger:hover {
     background-color: #c82333;
   }
-  
+ 
