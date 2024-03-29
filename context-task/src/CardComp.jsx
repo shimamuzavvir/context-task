@@ -75,7 +75,7 @@ const CardComp = () => {
                                             <p className="card-text"> <b>Rating: {item.rating}</b></p>
                                             <div className="d-flex align-items-center">
                                                 <button className="mx-2 quantity-btn p-2" onClick={() => HandleIncrease(item.id, item.quantity || 1)}><BiPlus /></button>
-                                                <h6 className="mx-2">{item.quantity}</h6>
+                                                <h6 className="mx-2">{item.quantity || 1}</h6>
                                                 <button className="mx-2 quantity-btn p-2" onClick={() => HandleDecrease(item.id, item.quantity || 1)}><BiMinus /></button>
                                             </div>
                                         </div>
